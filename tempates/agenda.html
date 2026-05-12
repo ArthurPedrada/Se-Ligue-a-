@@ -1,0 +1,21 @@
+<h2>Agenda</h2>
+
+<form action="/create" method="POST">
+    <input type="text" name="title" placeholder="Título" required>
+    <input type="date" name="date" required>
+    <input type="time" name="time" required>
+    <textarea name="description"></textarea>
+    <button type="submit">Adicionar</button>
+</form>
+
+<hr>
+
+{% for event in events %}
+    <p>
+        <strong>{{ event.title }}</strong><br>
+        {{ event.date }} - {{ event.time }}<br>
+        {{ event.description }}
+    </p>
+{% else %}
+    <p>Nenhum compromisso ainda.</p>
+{% endfor %}
