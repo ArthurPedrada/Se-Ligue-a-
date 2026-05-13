@@ -1,46 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Agenda</title>
+    <meta charset="UTF-8">
+    <title>Se ligue aí</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-<div class="container mt-4">
+<body class="bg-light">
 
-    <h2>Agenda</h2>
+<div class="container mt-5">
 
-    <form action="/create" method="POST" class="mb-4">
-        <input type="text" name="title" placeholder="Título" required class="form-control mb-2">
-        <input type="date" name="date" required class="form-control mb-2">
-        <input type="time" name="time" required class="form-control mb-2">
-        <textarea name="description" class="form-control mb-2"></textarea>
+    <!-- TOPO -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📅 Se ligue aí</h2>
+        <a href="/logout" class="btn btn-outline-danger">Sair</a>
+    </div>
 
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-    </form>
+    <!-- FORMULÁRIO -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Novo compromisso</h5>
 
-    <hr>
+            <form action="/create" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" name="title" class="form-control" placeholder="Título" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" name="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="time" name="time" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="description" class="form-control" placeholder="Descrição">
+                    </div>
+                </div>
 
+                <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LISTA -->
     {% for event in events %}
-        <div class="card mb-3 p-3">
+        <div class="card shadow-sm mb-3">
 
-            <strong>{{ event.title }}</strong>
+            <div class="card-body">
 
-            {% if event.date == hoje %}
-                <div class="text-danger">🔥 HOJE</div>
-            {% endif %}
+                <div class="d-flex justify-content-between align-items-center">
+                    
+                    <div>
+                        <h5 class="mb-1">{{ event.title }}</h5>
 
-            <div>{{ event.date }} - {{ event.time }}</div>
-            <div>{{ event.description }}</div>
+                        {% if event.date == hoje %}
+                            <span class="badge bg-danger">HOJE</span>
+                        {% endif %}
 
-            <div class="mt-2">
-                <a href="/edit/{{ event.id }}" class="btn btn-warning btn-sm">Editar</a>
-                <a href="/delete/{{ event.id }}" class="btn btn-danger btn-sm">Excluir</a>
+                        <div class="text-muted">
+                            {{ event.date }} às {{ event.time }}
+                        </div>
+
+                        <div>{{ event.description }}</div>
+                    </div>
+
+                    <div>
+                        <a href="/edit/{{ event.id }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="/delete/{{ event.id }}" class="btn btn-sm btn-danger">Excluir</a>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     {% else %}
-        <p>Nenhum compromisso ainda.</p>
+        <div class="alert alert-info">
+            Nenhum compromisso ainda.
+        </div>
     {% endfor %}
 
 </div>
