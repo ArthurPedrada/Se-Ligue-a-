@@ -4,6 +4,7 @@ from config import Config
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -124,4 +125,5 @@ def edit(id):
     return render_template('edit_event.html', event=event)
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
