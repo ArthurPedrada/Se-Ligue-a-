@@ -124,4 +124,4 @@ def edit(id):
     return render_template('edit_event.html', event=event)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
