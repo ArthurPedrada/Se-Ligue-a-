@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -14,24 +13,30 @@
     <div class="card shadow-sm">
         <div class="card-body">
 
-            <h4 class="mb-3">✏️ Editar compromisso</h4>
+            <h4 class="mb-3">Editar compromisso</h4>
 
-            <form method="POST">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST" action="">
 
                 <input type="text" name="title"
                        value="{{ event.title }}"
                        class="form-control mb-2" required>
 
                 <input type="date" name="date"
-                       value="{{ event.date.strftime('%Y-%m-%d') }}"
+                       value="{{ event.date.strftime('%Y-%m-%d') if event.date else '' }}"
                        class="form-control mb-2" required>
 
                 <input type="time" name="time"
-                       value="{{ event.time.strftime('%H:%M') }}"
+                       value="{{ event.time.strftime('%H:%M') if event.time else '' }}"
                        class="form-control mb-2" required>
 
-                <textarea name="description"
-                          class="form-control mb-2">{{ event.description }}</textarea>
+                <textarea name="description" 
+                          class="form-control mb-2">{{ event.description or '' }}</textarea>
 
                 <button class="btn btn-success">Salvar</button>
                 <a href="/" class="btn btn-secondary">Voltar</a>

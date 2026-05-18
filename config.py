@@ -1,10 +1,14 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+database_uri = os.getenv("DATABASE_URL", "sqlite:///database.db")
+
+if database_uri.startswith("postgres://"):
+    database_uri = database_uri.replace("postgres://", "postgresql://", 1)
 
 class Config:
-    uri = os.getenv("DATABASE_URL", "sqlite:///database.db")
-
-    if uri.startswith("postgres://"):
-        uri = uri.replace("postgres://", "postgresql://", 1)
-
-    SQLALCHEMY_DATABASE_URI = uri
+    SQLALCHEMY_DATABASE_URI = database_uri
     SQLALCHEMY_TRACK_MODIFICATIONS = False
