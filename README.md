@@ -1,11 +1,46 @@
-# Olá Bem Vindo ao Se Ligue aí!
-O Se Ligue aí, é um site de agenda eletrônica em python
+# Se Ligue aí! — Agenda Eletrônica
 
-# Os integrantes desse projeto incluem
+O **Se Ligue aí!** é uma aplicação web de agenda eletrônica desenvolvida em Python com o framework Flask. O sistema permite que múltiplos usuários se cadastrem de forma segura para gerenciar, organizar e acompanhar seus compromissos diários de forma simples e intuitiva.
+
+---
+
+## Funcionalidades
+
+* **Autenticação Completa e Segura:** Sistema de cadastro e login com senhas criptografadas.
+* **Gerenciamento de Compromissos (CRUD):** Criação, visualização, edição e exclusão de eventos.
+* **Privacidade dos Dados:** Cada usuário autenticado só tem acesso e controle aos seus próprios compromissos.
+* **Alerta Inteligente:** Destaque visual automático com a tag **"HOJE"** para compromissos do dia atual.
+* **Interface Responsiva:** Design limpo e adaptável para computadores e celulares desenvolvido com Bootstrap 5.
+* **Suporte Multi-banco de Dados:** Configurado para rodar localmente com SQLite e pronto para produção com PostgreSQL (Heroku, Render, etc.).
+
+---
+
+## Tecnologias Utilizadas
+
+* **Linguagem:** [Python 3](https://www.python.org/)
+* **Framework Web:** [Flask](https://flask.palletsprojects.com/)
+* **Banco de Dados & ORM:** [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/) (SQLAlchemy)
+* **Autenticação de Sessão:** [Flask-Login](https://flask-login.readthedocs.io/)
+* **Criptografia:** Werkzeug (Segurança de senhas)
+* **Design da Interface:** [Bootstrap 5](https://getbootstrap.com/)
+* **Variáveis de Ambiente:** Python-dotenv
+
+---
+
+## Como Executar o Projeto Localmente
+
+### 1. Clonar o Repositório
+bash
+git clone [https://github.com/ArthurPedrada/Se-Ligue-ai.git](https://github.com/ArthurPedrada/Se-Ligue-ai.git)
+cd Se-Ligue-ai
+
+# 👥 Integrantes do Projeto
+Conheça os desenvolvedores por trás do Se Ligue aí!:
+
 Arthur Gabriel Miranda Rebouças
 
-GitHub: https://github.com/ArthurPedrada
+GitHub: [@ArthurPedrada] https://github.com/ArthurPedrada
 
 Saulo Victor Ferreira Bandeira
 
-GitHub: https://github.com/Saulo04
+GitHub: [@Saulo04] https://github.com/Saulo04
