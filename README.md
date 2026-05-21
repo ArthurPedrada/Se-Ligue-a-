@@ -1,6 +1,6 @@
-# Se Ligue aí! — Agenda Eletrônica
+# Se Ligue ae! — Agenda Eletrônica
 
-O **Se Ligue aí!** é uma aplicação web de agenda eletrônica desenvolvida em Python com o framework Flask. O sistema permite que múltiplos usuários se cadastrem de forma segura para gerenciar, organizar e acompanhar seus compromissos diários de forma simples e intuitiva.
+O **Se Ligue ae!** é uma aplicação web de agenda eletrônica desenvolvida em Python com o framework Flask. O sistema permite que múltiplos usuários se cadastrem de forma segura para gerenciar, organizar e acompanhar seus compromissos diários de forma simples e intuitiva.
 
 ---
 
@@ -20,11 +20,16 @@ O **Se Ligue aí!** é uma aplicação web de agenda eletrônica desenvolvida em
 * **Linguagem:** [Python 3](https://www.python.org/)
 * **Framework Web:** [Flask](https://flask.palletsprojects.com/)
 * **Banco de Dados & ORM:** [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/) (SQLAlchemy)
+* **Driver de Conexão:** PyMySQL (Conector para comunicação com o banco de dados MySQL)
 * **Autenticação de Sessão:** [Flask-Login](https://flask-login.readthedocs.io/)
-* **Criptografia:** Werkzeug (Segurança de senhas)
+* **Criptografia:** Werkzeug (Segurança e hashing de senhas)
 * **Design da Interface:** [Bootstrap 5](https://getbootstrap.com/)
 * **Variáveis de Ambiente:** Python-dotenv
 
+### Ambiente de Desenvolvimento e Cloud
+* **Ambiente de Desenvolvimento (IDE):** [Visual Studio Code](https://code.visualstudio.com/) — Utilizado para codificação, automação de testes locais e controle de versão integrado com o Git.
+* **Hospedagem de Nuvem (PaaS):** [Railway](https://railway.app/) — Plataforma utilizada para o deploy automatizado da aplicação, gerenciamento das variáveis de ambiente e fornecimento do domínio público de acesso à aplicação.
+* **Controle de Versão:** [GitHub](https://github.com/) — Repositório remoto para versionamento seguro do código-fonte.
 ---
 
 ## Como Executar o Projeto Localmente
@@ -35,7 +40,7 @@ git clone [https://github.com/ArthurPedrada/Se-Ligue-ai.git](https://github.com/
 cd Se-Ligue-ai
 
 # 👥 Integrantes do Projeto
-Conheça os desenvolvedores por trás do Se Ligue aí!:
+Conheça os desenvolvedores por trás do Se Ligue ae!:
 
 Arthur Gabriel Miranda Rebouças
 
